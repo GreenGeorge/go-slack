@@ -1,4 +1,4 @@
-GO-SLACK
+Go-Slack
 ========
 [![CircleCI](https://circleci.com/gh/GreenGeorge/go-slack/tree/master.svg?style=shield)](https://circleci.com/gh/GreenGeorge/go-slack/tree/master)
 [![](https://godoc.org/github.com/greengeorge/go-slack?status.svg)](http://godoc.org/github.com/greengeorge/go-slack)
