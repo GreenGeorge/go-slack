@@ -14,7 +14,7 @@ Install it `$ go get github.com/greengeorge/go-slack`
 import "github.com/GreenGeorge/go-slack"
 
 // Bring your own Client or just pass nil
-client := http.Client{Timeout: time.Second * 10}
+client := http.Client{Timeout: time.Second * 10, client}
 
 // Instantiate go-slack with your access token)
 slack := slack.New("xoxp-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX")
@@ -84,9 +84,9 @@ _, err := sl.PostMessage(messageB)
 ```
 
 ## API Coverage
-Definitely doesn't cover the whole Slack API. Just the parts I need for my normal needs (easy message creation and sending by Slack's [Web API][1]). Contributions are welcome.
+Definitely doesn't cover the whole Slack API. Just the parts I need for my normal needs (easy message creation and sending by Slack's [Web API][1]). Contributions are most welcome.
 
-Please note the message struct might also be incomplete.
+Please note the message struct schema might also be incomplete. I've yet to find one list that covers everything.
 
 [1]:https://www.google.com
 [2]:https://api.slack.com/apps
