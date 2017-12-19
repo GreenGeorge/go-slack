@@ -77,6 +77,8 @@ type Option struct {
 }
 
 // TODO flesh out message constructor
+
+// NewMessage creates a new base message pre-loaded with sender info and message destination
 func NewMessage(username, channel, emoji string) Message {
 	return Message{
 		UserName:  username,
@@ -85,6 +87,7 @@ func NewMessage(username, channel, emoji string) Message {
 	}
 }
 
+// AddAttachment adds an attachment onto a message
 func (m *Message) AddAttachment(attachments ...Attachment) *Message {
 	for _, attachment := range attachments {
 		m.Attachments = append(m.Attachments, attachment)
@@ -92,6 +95,7 @@ func (m *Message) AddAttachment(attachments ...Attachment) *Message {
 	return m
 }
 
+// AddAction adds an action onto an attachment
 func (a *Attachment) AddAction(actions ...Action) *Attachment {
 	for _, action := range actions {
 		a.Actions = append(a.Actions, action)
