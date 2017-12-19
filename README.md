@@ -84,7 +84,7 @@ _, err := sl.PostMessage(messageB)
 ```
 
 ## API Coverage
-Definitely doesn't cover the whole Slack API. Just the parts I need for my normal needs (easy message creation and sending by Slack's [Web API][1]). Contributions are most welcome.
+Definitely doesn't cover the whole Slack API. Just the parts I need for my use cases (easy message creation and sending by Slack's [Web API][1]). Contributions are most welcome.
 
 Please note the message struct schema might also be incomplete. I've yet to find one list that covers everything.
 
