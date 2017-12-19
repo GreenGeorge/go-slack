@@ -75,6 +75,7 @@ _, err := sl.PostMessage(messageB)
 ```
 
 *et voilà*
+
 ![Example result][example]
 
 ## API Coverage
