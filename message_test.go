@@ -46,7 +46,7 @@ func TestAddAttachments(t *testing.T) {
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
 			m := Message{}
-			m.AddAttachments(test.attachments...)
+			m.AddAttachment(test.attachments...)
 			expected := len(test.attachments)
 			actual := len(m.Attachments)
 			assert.Equal(t, expected, actual)
@@ -74,7 +74,7 @@ func TestAddActions(t *testing.T) {
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
 			a := Attachment{}
-			a.AddActions(test.actions...)
+			a.AddAction(test.actions...)
 			expected := len(test.actions)
 			actual := len(a.Actions)
 			assert.Equal(t, expected, actual)
@@ -102,7 +102,7 @@ func TestAddField(t *testing.T) {
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
 			a := Attachment{}
-			a.AddFields(test.fields...)
+			a.AddField(test.fields...)
 			expected := len(test.fields)
 			actual := len(a.Fields)
 			assert.Equal(t, expected, actual)
