@@ -74,6 +74,9 @@ _, err := sl.PostMessage(messageB)
 ...
 ```
 
+*et voilà*
+![Example result][example]
+
 ## API Coverage
 Definitely doesn't cover the whole Slack API. Just the parts I need for my use cases (easy message creation and sending by Slack's [Web API][1]). Contributions are most welcome.
 
@@ -81,3 +84,4 @@ Please note the message struct schema might also be incomplete. I've yet to find
 
 [1]:https://www.google.com
 [2]:https://api.slack.com/apps
+[example]:example/example-result.jpg
