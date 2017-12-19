@@ -102,3 +102,11 @@ func (a *Attachment) AddAction(actions ...Action) *Attachment {
 	}
 	return a
 }
+
+// AddField adds a field onto an attachment
+func (a *Attachment) AddField(fields ...Field) *Attachment {
+	for _, field := range fields {
+		a.Fields = append(a.Fields, field)
+	}
+	return a
+}
