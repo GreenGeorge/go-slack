@@ -78,8 +78,8 @@ type Option struct {
 
 // TODO flesh out message constructor
 
-// NewMessage creates a new base message pre-loaded with sender info and message destination
-func NewMessage(username, channel, emoji string) Message {
+// NewBaseMessage creates a new base message pre-loaded with sender info and message destination
+func NewBaseMessage(username, channel, emoji string) Message {
 	return Message{
 		UserName:  username,
 		Channel:   channel,
