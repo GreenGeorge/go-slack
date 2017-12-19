@@ -56,8 +56,8 @@ attachmentFoo.AddAction(actionBaz, actionFiz)
 attachmentBar.AddAction(actionFiz)
 
 // Setup base messages
-messageA := slack.NewMessage("FooBar", "AAAAAAAAAA", ":skull:")
-messageB := slack.NewMessage("BazFiz", "BBBBBBBBBB",":skull:")
+messageA := slack.NewMessage("FooBar", "CHANNELIDA", ":skull:")
+messageB := slack.NewMessage("BazFiz", "CHANNELIDB",":skull:")
 
 // Assemble the final message
 // Add a text message maybe
