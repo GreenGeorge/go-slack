@@ -2,6 +2,8 @@ package slack
 
 // TODO Double check and complete message schema
 
+// Message is used to describe Slack messages.
+// This will be marshaled into JSON to be sent to the API
 type Message struct {
 	Channel         string       `json:"channel,omitempty"`
 	Text            string       `json:"text,omitempty"`
@@ -15,6 +17,7 @@ type Message struct {
 	Mrkdwn          bool         `json:"mrkdwn,omitempty"`
 }
 
+// Attachment is used to describe rich content sections in Slack messages
 type Attachment struct {
 	Fallback       string   `json:"fallback,omitempty"`
 	CallbackID     string   `json:"callback_id,omitempty"`
@@ -37,12 +40,14 @@ type Attachment struct {
 	TS             int      `json:"ts,omitempty"`
 }
 
+// Field is used to specify a list of content in short key value format
 type Field struct {
 	Title string `json:"title,omitempty"`
 	Value string `json:"value,omitempty"`
 	Short bool   `json:"short,omitempty"`
 }
 
+// Action is used to specify interactions that a Slack message can accomodate
 type Action struct {
 	Name           string        `json:"name,omitempty"`
 	Text           string        `json:"text,omitempty"`
@@ -58,6 +63,7 @@ type Action struct {
 	URL            string        `json:"url,omitempty"`
 }
 
+// Confirm is used to specify the verification of an action execution
 type Confirm struct {
 	Title       string `json:"title,omitempty"`
 	Text        string `json:"text,omitempty"`
@@ -65,11 +71,13 @@ type Confirm struct {
 	DismissText string `json:"dismiss_text,omitempty"`
 }
 
+// OptionGroup is used to group options together
 type OptionGroup struct {
 	Text string `json:"text,omitempty"`
 	Option
 }
 
+// Option is used to specify choices available in an action
 type Option struct {
 	Text        string `json:"text,omitempty"`
 	Value       string `json:"text,omitempty"`
