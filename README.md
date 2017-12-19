@@ -17,7 +17,7 @@ import "github.com/GreenGeorge/go-slack"
 client := http.Client{Timeout: time.Second * 10}
 
 // Instantiate go-slack with your access token)
-slack := slack.New("xoxp-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX", client)
+sl := slack.New("xoxp-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX", client)
 
 // Prepare attachments
 attachmentFoo := slack.Attachment{
