@@ -14,10 +14,10 @@ Install it `$ go get github.com/greengeorge/go-slack`
 import "github.com/GreenGeorge/go-slack"
 
 // Bring your own Client or just pass nil
-client := http.Client{Timeout: time.Second * 10, client}
+client := http.Client{Timeout: time.Second * 10}
 
 // Instantiate go-slack with your access token)
-slack := slack.New("xoxp-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX")
+slack := slack.New("xoxp-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXX", client)
 
 // Prepare attachments
 attachmentFoo := slack.Attachment{
@@ -32,7 +32,7 @@ attachmentBar := slack.Attachment{
   Text:           "You've got Bar",
   Color:          "#00e6f5",
   AttachmentType: "default",
-  "Fallback":     "You've got Bar",
+  Fallback:     "You've got Bar",
 }
 
 // Prepare reusable actions
@@ -56,17 +56,8 @@ attachmentFoo.AddAction(actionBaz, actionFiz)
 attachmentBar.AddAction(actionFiz)
 
 // Setup base messages
-messageA := slack.NewMessage{
-  username: "FooBar",
-  channel: "AAAAAAAAAA",
-  emoji: ":skull:",
-}
-
-messageB := slack.NewMessage{
-  username: "BazFiz",
-  channel: "BBBBBBBBBB",
-  emoji: ":skull:",
-}
+messageA := slack.NewMessage("FooBar", "AAAAAAAAAA", ":skull:")
+messageB := slack.NewMessage("BazFiz", "BBBBBBBBBB",":skull:")
 
 // Assemble the final message
 // Add a text message maybe
