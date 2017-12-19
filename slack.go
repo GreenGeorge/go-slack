@@ -7,6 +7,8 @@ import (
 	"net/http"
 )
 
+const slackBaseURL = "https://slack.com/api"
+
 type Slack struct {
 	clientID     string
 	clientSecret string
@@ -23,13 +25,15 @@ func New(accessToken string, client *http.Client) Slack {
 }
 
 // PostMessage posts a formatted message to a Slack workspace
-func (s *Slack) PostMessage(webhookURL string, message Message) (*http.Response, error) {
+func (s *Slack) PostMessage(message Message) (*http.Response, error) {
 	json, err := json.Marshal(message)
 	if err != nil {
 		return nil, err
 	}
 	payloadBuffer := bytes.NewBuffer(json)
-	req, err := http.NewRequest(http.MethodPost, webhookURL, payloadBuffer)
+	endpoint := "/chat.postMessage"
+	targetURL := fmt.Sprintf("%s%s", slackBaseURL, endpoint)
+	req, err := http.NewRequest(http.MethodPost, targetURL, payloadBuffer)
 	if err != nil {
 		return nil, err
 	}
