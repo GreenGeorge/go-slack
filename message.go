@@ -80,8 +80,8 @@ type OptionGroup struct {
 // Option is used to specify choices available in an action
 type Option struct {
 	Text        string `json:"text,omitempty"`
-	Value       string `json:"text,omitempty"`
-	Description string `json:"text,omitempty"`
+	Value       string `json:"value,omitempty"`
+	Description string `json:"description,omitempty"`
 }
 
 // TODO flesh out message constructor
